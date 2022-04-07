@@ -1,4 +1,4 @@
-let firstName = "Tomasz";
+/*let firstName = "Tomasz";
 //console.log(firstName);
 
 let country = "Poland";
@@ -74,8 +74,7 @@ const averageAge = (age + ageJuan) / 2;
 
 //4
 
-const description =
-  "Portugal is in Europe, and there is 11 milion people speaking portugese";
+
 //console.log(description);
 
 const massMark = 78,
@@ -89,3 +88,122 @@ console.log(bmiMark);
 console.log(bmiJohn);
 let markHigherBMI = bmiMark > bmiJohn;
 console.log("mark has higher bmi : " + markHigherBMI);
+
+const firstName = "Tomasz";
+const job = "Student";
+const birthYear = 2005;
+const year = 2022;
+
+const tomasz =
+  "I'm " + firstName + ",a " + (year - birthYear) + " years old " + job + "!";
+console.log(tomasz);
+
+const tomaszNew = ` I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(tomaszNew);
+
+console.log(`String
+multiple
+lines`);
+
+const description = `Portugal is in Europe, and there is 11 milion people speaking portugese`;
+
+
+
+const age = 15;
+const isOldEnougch = age >= 18;
+
+if (isOldEnougch) {
+  console.log(`Juan can start driving license 🦖`);
+} else {
+  const yearsLeft = 18 - age;
+  console.log(
+    `Juan is too young. You have to wait about ${yearsLeft} years to start`
+  );
+}
+
+const birthYear = 2005;
+let century;
+
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
+
+
+const population = 39;
+if (population > 33) {
+  console.log(
+    `Poland's population is ${population - 33} milions above average`
+  );
+} else {
+  console.log(
+    `Poland's population is ${33 - population} milions below the average`
+  );
+}
+
+
+///coding challenge #2
+const massMark = 95,
+  massJohn = 85,
+  heightMark = 1.88,
+  heightJohn = 1.76;
+let bmiMark, bmiJohn;
+bmiMark = massMark / (heightMark * heightMark);
+bmiJohn = massJohn / (heightJohn * heightJohn);
+if (bmiJohn > bmiMark) {
+  console.log(`John has ${bmiJohn - bmiMark} points higher bmi than mark`);
+} else {
+  console.log(`Mark has ${bmiMark - bmiJohn} points higher bmi than John`);
+}
+
+
+
+//type convertion
+const inputYear = `2005`;
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number(`Tomasz`));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+//type corection
+
+console.log("I am " + 17 + " years old");
+console.log("23" - "10" - 3);
+console.log("23" / "2");
+
+
+
+console.log("9" - "5"); //4
+console.log("19" - "13" + "17"); //617
+console.log("19" - "13" + 17); //23
+console.log("123" < 57); //nein
+console.log(5 + 6 + "4" + 9 - 4 - 2); //1143
+
+*/
+
+//5 flasy valutes: 0, '', undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Tomasz"));
+console.log(Boolean({ NaN }));
+console.log(Boolean(""));
+
+const money = 100;
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log("You should get a job!");
+}
+
+let height = 0;
+if (height) {
+  console.log("height is defined");
+} else {
+  console.log("height is undefined");
+}
