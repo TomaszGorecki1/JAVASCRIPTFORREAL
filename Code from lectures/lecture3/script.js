@@ -230,7 +230,7 @@ if (favourite === 23) {
 if (favourite !== 23) {
   console.log("why not 23");
 }
-*/
+
 
 let numNeighbours = Number(
   prompt("How many neighbour countries does your country have")
@@ -244,3 +244,170 @@ if (numNeighbours === 1) {
 } else {
   console.log("unsporetd value");
 }
+
+
+// if (shouldDrive) {
+//   console.log("Juan is able to drive");
+// } else {
+//   console.log("someone elese should drive");
+// }
+
+const hasDriverLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriverLicense && hasGoodVision);
+console.log(hasDriverLicense || hasGoodVision);
+console.log(!hasDriverLicense);
+
+const isTired = false;
+console.log(hasDriverLicense && hasGoodVision && isTired);
+
+const shouldDrive = hasDriverLicense && hasGoodVision && !isTired;
+
+if (shouldDrive) {
+  console.log("Juan is able to drive");
+} else {
+  console.log("someone elese should drive");
+}
+
+
+const isSpeakingEnglish = false;
+const hasLessThan50 = true;
+const isIsland = false;
+
+if (isSpeakingEnglish && hasLessThan50 && !isIsland) {
+  console.log("Poland is country for ya");
+} else {
+  console.log("Poland is not country for ya");
+}
+
+
+let averageDolphins = (97 + 112 + 101) / 3;
+let averageKoalas = (109 + 95 + 106) / 3;
+
+if (averageDolphins >= 100 || averageKoalas >= 100) {
+  if (averageDolphins === averageKoalas) {
+    console.log("draw what a score");
+  } else if (averageDolphins > averageKoalas) {
+    console.log("Dolphins won easly");
+  } else {
+    console.log("Koalas won easly");
+  }
+} else {
+  console.log("Both teams didn't get 100 points");
+}
+
+
+const day = "sunday";
+
+switch (day) {
+  case `monday`: /// day === `monday`
+    console.log(`doing stuff`);
+    console.log(`janusz pawlacz`);
+    break;
+  case `tuesday`:
+    console.log(`do tuesday stuff`);
+    break;
+  case `wednesday`:
+    console.log(`wednesday stuff`);
+    break;
+  case `thursday`:
+    console.log(`thursday stuff`);
+    break;
+  case `friday`:
+    console.log(`firday stuff`);
+    break;
+  case `saturday`:
+    console.log(`saturday stuff`);
+    break;
+  case `sunday`:
+    console.log(`sunday stuff`);
+    break;
+  default:
+    console.log(`not a valid day`);
+}
+
+if (day === `monday`) {
+  console.log(`doing monday stuff`);
+} else if (day === `tuesday`) {
+  console.log(`doing wednesday stuff`);
+} else if (day === `wednesday`) {
+  console.log(`doing thursday stuff`);
+} else if (day === `thursday`) {
+  console.log(`doing friday stuff`);
+} else if (day === `friday`) {
+  console.log(`doing saturday stuff`);
+} else if (day === `saturday`) {
+  console.log(`doing sunday stuff`);
+} else if (day === `sunday`) {
+  console.log(`doing sunday stuff`);
+} else {
+  console.log(`not valid day`);
+}
+
+
+const language = `hindi`;
+
+switch (language) {
+  case `china`:
+  case `mandarin`:
+    console.log(`Most Used`);
+    break;
+  case `spanish`:
+    console.log(`2nd place`);
+    break;
+  case `english`:
+    console.log(`3rd place`);
+    break;
+  case `hindi`:
+    console.log(`Number 4`);
+    break;
+  case `arabic`:
+    console.log(`Numba 5`);
+    break;
+  default:
+    console.log(`great language too`);
+    break;
+}
+
+
+const age = 1;
+age >= 18
+  ? console.log(`i am an alcoholic`)
+  : console.log(`i am an not alcoholic`);
+
+const drink = age >= 18 ? `vodka` : `wasser`;
+console.log(`juan likes ${drink}`);
+
+//same as below
+
+let dring2;
+if (age >= 18) {
+  dring2 = `vodka`;
+} else {
+  dring2 = `wasser`;
+}
+console.log(dring2);
+
+console.log(`I like to drink ${age >= 18 ? `vodka` : `wasser`}`);
+
+
+const population = 38;
+
+console.log(
+  population > 33
+    ? `Poland's population is above the average`
+    : `Poland's Population is below the avg`
+);
+
+*/
+
+let tip = 0;
+const bill = 40;
+
+console.log(
+  `The bill was ${bill} the tip was ${(tip =
+    bill >= 50 && bill <= 300
+      ? (tip = bill * 0.15)
+      : (tip = bill * 0.2))} and total value was ${bill + tip}`
+);
