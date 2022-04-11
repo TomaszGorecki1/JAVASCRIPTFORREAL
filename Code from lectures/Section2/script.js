@@ -176,7 +176,7 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 console.log(yearsUntilRetirement(2005, `Tomasz`));
 console.log(yearsUntilRetirement(2120, `CyberTomasz`));
 
-*/
+
 
 function calcAverage(score1, score2, score3) {
   return (score1 + score2 + score3) / 3;
@@ -210,3 +210,196 @@ function checkWinner(Avgdolphins, Avgkoalas) {
   }
 }
 console.log(checkWinner());
+
+
+
+const firend1 = `michael`;
+const firend2 = `steven`;
+const firend3 = `Juan`;
+
+const friends = [`Michael`, `Steven`, `Peter`];
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = `Jay`;
+console.log(friends);
+
+const tomasz = [`Tomasz`, `Górecki`, 2137 - 2005, `student`, friends];
+console.log(tomasz.length);
+
+//excersise
+function calcAge(birthYear) {
+  return 2137 - birthYear;
+}
+
+const years = [1990, 1967, 2123, 2010, 2090];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages);
+
+
+
+function percentageOfWorld1(population) {
+  return `${(population / 7900) * 100}% of the world`;
+}
+
+const populations = [38, 1114, 7, 18];
+if (populations.length === 4) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+const percentages = [
+  percentageOfWorld1(populations[0]),
+  percentageOfWorld1(populations[1]),
+  percentageOfWorld1(populations[2]),
+  percentageOfWorld1(populations[3]),
+];
+
+console.log(percentages);
+
+
+
+//adding elements
+const friends = [`Michael`, `Steven`, `Peter`];
+//adding to end
+const newLength = friends.push(`Jay`);
+console.log(friends);
+console.log(newLength);
+//adding to beggining
+friends.unshift(`John`);
+console.log(friends);
+
+//removing elements
+friends.pop(); //removing last element of the array
+const popped = friends.pop(); //it returns value of removed item
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // deleting first element
+console.log(friends);
+
+console.log(friends.indexOf(`Steven`));
+console.log(friends.indexOf(`Bob`));
+
+friends.push(23);
+console.log(friends.includes(`Steven`));
+console.log(friends.includes(`Bob`));
+console.log(friends.includes(23));
+
+if (friends.includes(`Steven`)) {
+  console.log(`You have a friend called Steven`);
+}
+
+
+
+const neighbours = [
+  `Germany`,
+  `Russia`,
+  `Slovakia`,
+  `Czechia`,
+  `Ukraine`,
+  `Beleraus`,
+  `Lithuania`,
+];
+console.log(neighbours);
+
+neighbours.push(`Utopia`);
+console.log(neighbours);
+
+neighbours.pop();
+console.log(neighbours);
+
+if (!neighbours.includes(`Germany`)) {
+  console.log(`propably not the eastern european country`);
+} else {
+  console.log(`propably  the eastern european country`);
+}
+
+neighbours[neighbours.indexOf(`Czechia`)] = `Czech Republic`;
+console.log(neighbours);
+
+
+
+function percentage(bill) {
+  if (bill >= 50 && bill <= 300) {
+    return bill * 0.15;
+  } else {
+    return bill * 0.2;
+  }
+}
+
+const tips = [percentage(125), percentage(555), percentage(44)];
+console.log(tips);
+
+const totals = [tips[0] + 125, tips[1] + 555, tips[2] + 44];
+console.log(totals);
+
+*/
+
+const myCountry = {
+  country: `Poland`,
+  capital: `Warsaw`,
+  language: `Polish`,
+  population: 38,
+  neigbours: [
+    `Germany`,
+    `Russia`,
+    `Slovakia`,
+    `Czechia`,
+    `Ukraine`,
+    `Beleraus`,
+    `Lithuania`,
+  ],
+};
+
+console.log(myCountry);
+
+const tomasz = {
+  firstName: `Tomasz`,
+  lastName: `Górecki`,
+  age: 2137 - 2120,
+  job: `student`,
+  friends: [`Michael`, `Peter`, `Steven`],
+};
+
+console.log(tomasz);
+
+console.log(tomasz.lastName);
+console.log(tomasz[`lastName`]);
+
+const nameKey = `Name`;
+console.log(tomasz[`first` + nameKey]);
+console.log(tomasz[`last` + nameKey]);
+
+tomasz.location = `Poland`;
+tomasz[`twitter`] = `@wojtylashitoast2137`;
+console.log(tomasz.location);
+
+console.log(
+  `${tomasz.firstName} has ${tomasz.friends.length} friends, and his best friend is called ${tomasz.friends[0]}`
+);
+
+console.log(
+  `${myCountry.country} has ${
+    myCountry.population + 2
+  } milions people that speaks ${myCountry.language} and has ${
+    myCountry.neigbours.length
+  } neigbours and a capital is in ${myCountry.capital} after ${(myCountry[
+    "population"
+  ] -= 2)}`
+);
