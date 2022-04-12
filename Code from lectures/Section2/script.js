@@ -349,7 +349,7 @@ console.log(tips);
 const totals = [tips[0] + 125, tips[1] + 555, tips[2] + 44];
 console.log(totals);
 
-*/
+
 
 const myCountry = {
   country: `Poland`,
@@ -403,3 +403,271 @@ console.log(
     "population"
   ] -= 2)}`
 );
+
+
+
+const tomasz = {
+  firstName: `Tomasz`,
+  lastName: `Górecki`,
+  birthYear: 2120,
+  job: `student`,
+  friends: [`Michael`, `Peter`, `Steven`],
+  hasDrivers: true,
+  calcAge: function () {
+    this.age = 2137 - this.birthYear;
+    return this.age;
+  },
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2137 - this.birthYear;
+  // },
+  getSummary: function () {
+    if (this.hasDrivers === true) {
+      return `Tomasz is a ${this.calcAge()}-years old ${
+        this.job
+      }, and he has a driver license`;
+    } else {
+      return `Tomasz is a ${this.calcAge()}-years old ${
+        this.job
+      }, and he has not driver license`;
+    }
+  },
+};
+
+console.log(tomasz.calcAge());
+console.log(tomasz.getSummary());
+
+
+
+const myCountry = {
+  country: `Poland`,
+  capital: `Warsaw`,
+  language: `Polish`,
+  population: 38,
+  neigbours: [
+    `Germany`,
+    `Russia`,
+    `Slovakia`,
+    `Czechia`,
+    `Ukraine`,
+    `Beleraus`,
+    `Lithuania`,
+  ],
+  isIsland: function () {
+    if (this.neigbours.length === 0) {
+      return (this.island = true);
+    } else {
+      return (this.island = false);
+    }
+  },
+  decribe: function () {
+    console.log(
+      `${this.country} has ${this.population} milions of people. It's capital is in ${this.capital} and spoken language is ${this.language}`
+    );
+  },
+};
+
+myCountry.decribe();
+console.log(myCountry.isIsland());
+
+
+
+const mark = {
+  firstName: `Mark`,
+  lastName: `Miller`,
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    return (this.bmi = this.mass / this.height ** 2);
+  },
+};
+console.log(mark.calcBMI());
+console.log(mark.bmi);
+const john = {
+  firstName: `John`,
+  lastName: `Smith`,
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    return (this.bmi = this.mass / this.height ** 2);
+  },
+};
+console.log(john.calcBMI());
+console.log(john.bmi);
+
+if (john.bmi > mark.bmi) {
+  console.log(
+    `${john.firstName} BMI (${john.bmi}) is higher than ${mark.firstName}'s (${mark.bmi})`
+  );
+} else {
+  console.log(
+    `${john.firstName} BMI (${john.bmi}) is lower than ${mark.firstName}'s (${mark.bmi})`
+  );
+}
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Juan reapeated ${rep}`);
+}
+
+for (let voter = 1; voter < 50; voter++) {
+  console.log(`voter ${voter} is voting`);
+}
+
+const tomaszArray = [
+  `Tomasz`,
+  `Górecki`,
+  2137 - 2120,
+  `student`,
+  [`Michael`, `Peter`, `Steven`],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < tomaszArray.length; i++) {
+  console.log(tomaszArray[i], typeof tomaszArray[i]);
+
+  // types[i] = typeof tomaszArray[i];
+  types.push(typeof tomaszArray[i]);
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages[i] = 2022 - years[i];
+}
+
+for (let i = 0; i < ages.length; i++) {
+  console.log(ages[i]);
+}
+
+//continue
+
+
+
+
+//only strings
+for (let i = 0; i < tomaszArray.length; i++) {
+  if (typeof tomaszArray[i] !== `string`) {
+    continue;
+  }
+  console.log(tomaszArray[i], typeof tomaszArray[i]);
+}
+
+
+
+//break wtih number
+for (let i = 0; i < tomaszArray.length; i++) {
+  if (typeof tomaszArray[i] === `number`) {
+    break;
+  }
+  console.log(tomaszArray[i], typeof tomaszArray[i]);
+}
+
+
+const populations = [38, 1114, 7, 18];
+const percentages2 = [];
+
+for (let i = 0; i < populations.length; i++) {
+  percentages2[i] = (populations[i] / 7000) * 100;
+}
+
+
+
+const tomasz = [
+  `Tomasz`,
+  `Górecki`,
+  2137 - 2120,
+  `student`,
+  [`Michael`, `Peter`, `Steven`],
+];
+
+for (let i = tomasz.length - 1; i >= 0; i--) {
+  console.log(tomasz[i]);
+}
+
+for (let execersise = 1; execersise < 4; execersise++) {
+  console.log(`1st ecersisce ${execersise}`);
+  for (let excersise2 = 1; excersise2 < 6; excersise2++) {
+    console.log(`2nd${execersise}`);
+  }
+}
+
+
+const listOfNeighbours2 = [
+  [`Canada`, `Mexico`],
+  [`Spain`],
+  [`Norway`, `Sweeden`, `Russia`],
+];
+
+for (let i = 0; i < listOfNeighbours2.length; i++) {
+  for (let y = 0; y < listOfNeighbours2[i].length; y++) {
+    console.log(`Neigbour: ${listOfNeighbours2[i][y]}`);
+  }
+}
+
+
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`juan ${rep}`);
+// }
+
+// let i = 1;
+// while (i <= 10) {
+//   console.log(`juan ${i}`);
+//   i++;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+  console.log(`numba` + dice);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`loop ended`);
+}
+
+
+
+const populations = [10, 1441, 332, 83];
+const percentages2 = [];
+function percentageOfWorld1(population) {
+  return `${(population / 7900) * 100}% of the world`;
+}
+const percentages3 = [];
+let i = 0;
+while (i < populations.length) {
+  const perc = percentageOfWorld1(populations[i]);
+  percentages3.push(perc);
+  i++;
+}
+console.log(percentages3);
+
+*/
+function percentage(bill) {
+  if (bill >= 50 && bill <= 300) {
+    return bill * 0.15;
+  } else {
+    return bill * 0.2;
+  }
+}
+
+function calcAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum / arr.length;
+}
+
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  tips[i] = percentage(bills[i]);
+  totals[i] = percentage(bills[i]) + bills[i];
+}
+console.log(tips);
+console.log(totals);
+
+console.log(calcAverage(totals));
