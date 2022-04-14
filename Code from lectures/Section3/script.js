@@ -158,3 +158,20 @@ const printForecast = function (arr) {
 };
 printForecast(data1);
 */
+
+// TASK IS TO DISPLAY TEMPERTAURE IN DAY
+//CREATE ARRAY WITH DATA
+//MAKE A FUNCTION CALLED  printForecast witch takes previous array
+//in function make a for loop from 0 to array length
+//display string  with tempertature(value from array) and day array index+1 and days.
+// use the function with 2 arrays
+
+const arr = [17, 21, 23];
+const arr2 = [12, 5, -5, 0, 4];
+function printForecast(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`${arr[i]}*C in ${i + 1} days`);
+  }
+}
+printForecast(arr);
+printForecast(arr2);
