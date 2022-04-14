@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  background-color: black;
+  color: rgb(43, 222, 43);
+}
+header {
+  position: relative;
+  height: 35vh;
+  border-bottom: 7px solid rgb(43, 222, 43);
+}
+main {
+  height: 65vh;
+  color: rgb(43, 222, 43);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.left {
+  width: 52 rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.right {
+  width: 52rem;
+  font-size: 2rem;
+}
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h2 {
+  text-align: left;
+  width: 100%;
+  position: relative;
+  left: 50%;
+}
+.grade {
+  background-color: black;
+  color: rgb(43, 222, 43);
+  font-size: 6rem;
+  width: 6rem;
+  pad: 3rem 0rem;
+  border: 5px solid rgb(43, 222, 43);
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.5s;
+  left: 50%;
+  position: relative;
+}
+.grade:hover {
+  background-color: rgb(43, 222, 43);
+  color: black;
+  border: 5px solid white;
+}
+.grade:focus {
+  background-color: rgb(43, 222, 43);
+  color: black;
+  border: 5px solid white;
+}
+.weight:focus {
+  background-color: rgb(43, 222, 43);
+  color: black;
+  border: 5px solid white;
+}
+.weight:hover {
+  background-color: rgb(43, 222, 43);
+  color: black;
+  border: 5px solid white;
+}
+.weight {
+  background-color: black;
+  color: rgb(43, 222, 43);
+  font-size: 6rem;
+  width: 6rem;
+  pad: 3rem 0rem;
+  border: 5px solid rgb(43, 222, 43);
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.5s;
+  left: 50%;
+  position: relative;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.respond {
+  padding: 10rem;
+  justify-self: center;
+}
+.btn {
+  border: 4px solid rgb(43, 222, 43);
+  background-color: black;
+  color: rgb(43, 222, 43);
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 2rem;
+  cursor: pointer;
+  border-radius: 25%;
+  transition: all 0.5s;
+  left: 50%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.btn:hover {
+  background-color: rgb(43, 222, 43);
+  color: black;
+  border: 4px solid white;
+}
