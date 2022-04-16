@@ -60,3 +60,12 @@ document.addEventListener(`keydown`, function (e) {
     console.log(`open info`);
   }
 });
+
+const drawBtn = document.querySelector(`.mode`);
+drawBtn.addEventListener(`click`, function () {
+  document.body.classList.toggle(`body-light`);
+  document.querySelector(`header`).classList.toggle(`header-light`);
+  document.querySelector(`main`).classList.toggle(`main-light`);
+  document.querySelector(`.grade`).classList.toggle(`grade-light`);
+  document.querySelector(`.weight`).classList.toggle(`weight-light`);
+});

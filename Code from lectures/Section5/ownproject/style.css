@@ -13,10 +13,17 @@ body {
   background-color: black;
   color: rgb(43, 222, 43);
 }
+.body-light {
+  background-color: rgb(43, 222, 43) !important;
+  color: black !important;
+}
 header {
   position: relative;
   height: 35vh;
   border-bottom: 7px solid rgb(43, 222, 43);
+}
+.header-light {
+  border-bottom: 7px solid black !important;
 }
 main {
   height: 65vh;
@@ -24,6 +31,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+.main-light {
+  color: black !important;
 }
 .left {
   width: 52 rem;
@@ -64,29 +74,67 @@ h2 {
   left: 50%;
   position: relative;
 }
+.grade-light {
+  color: black !important;
+  border: 5px solid black !important;
+}
 .grade:hover {
   background-color: rgb(43, 222, 43);
   color: black;
   border: 5px solid white;
+}
+.grade-light:hover {
+  background-color: black !important;
+  color: rgb(43, 222, 43) !important;
+  border: 5px solid white !important;
 }
 .grade:focus {
   background-color: rgb(43, 222, 43);
   color: black;
   border: 5px solid white;
 }
+.grade-light:focus {
+  background-color: black !important;
+  color: rgb(43, 222, 43) !important;
+  border: 5px solid white !important;
+}
+.weight-light:focus {
+  background-color: black !important;
+  color: rgb(43, 222, 43) !important;
+  border: 5px solid white !important;
+}
 .weight:focus {
   background-color: rgb(43, 222, 43);
   color: black;
   border: 5px solid white;
+}
+.weight-light:hover {
+  background-color: black !important;
+  color: rgb(43, 222, 43) !important;
+  border: 5px solid white !important;
 }
 .weight:hover {
   background-color: rgb(43, 222, 43);
   color: black;
   border: 5px solid white;
 }
+.weight-light {
+  background-color: black !important;
+  color: black !important;
+  font-size: 6rem;
+  width: 6rem;
+  pad: 3rem 0rem;
+  border: 5px solid black !important;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.5s;
+  left: 50%;
+  position: relative;
+}
 .weight {
-  background-color: black;
-  color: rgb(43, 222, 43);
+  background-color: rgb(43, 222, 43);
+  color: black;
   font-size: 6rem;
   width: 6rem;
   pad: 3rem 0rem;
@@ -121,9 +169,28 @@ input::-webkit-inner-spin-button {
   position: relative;
   margin-bottom: 1rem;
 }
+.btn-light {
+  border: 4px solid black;
+  background-color: rgb(43, 222, 43);
+  color: black;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 2rem;
+  cursor: pointer;
+  border-radius: 25%;
+  transition: all 0.5s;
+  left: 50%;
+  position: relative;
+  margin-bottom: 1rem;
+}
 .btn:hover {
   background-color: rgb(43, 222, 43);
   color: black;
+  border: 4px solid white;
+}
+.btn-light:hover {
+  background-color: black;
+  color: rgb(43, 222, 43);
   border: 4px solid white;
 }
 .hidden {
@@ -137,6 +204,19 @@ input::-webkit-inner-spin-button {
   width: 70%;
   background-color: black;
   color: rgb(43, 222, 43);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.info-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: rgb(43, 222, 43);
+  color: black;
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
@@ -166,8 +246,27 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   transition: all 0.5s;
 }
+.show-info-light {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  background-color: rgb(43, 222, 43);
+  color: black;
+  border-radius: 10rem;
+  cursor: pointer;
+  border: 4px solid black;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+}
 .show-info:hover {
   background-color: rgb(43, 222, 43);
+  color: black;
+  border: 4px solid white;
+}
+.show-info-light:hover {
+  background-color: black;
   color: black;
   border: 4px solid white;
 }
@@ -188,4 +287,72 @@ p {
   cursor: pointer;
   border: none;
   background: none;
+}
+.close-info-light {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: black;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+header button {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px #f45e61;
+  color: #f45e61;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+}
+header button::before,
+header button::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.draw {
+  transition: color 0.25s;
+}
+.draw::before,
+.draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+.draw:hover {
+  color: #60daaa;
+}
+.draw:hover::before,
+.draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.draw:hover::before {
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw:hover::after {
+  border-bottom-color: #60daaa;
+  border-left-color: #60daaa;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
+    height 0.25s ease-out 0.75s;
 }
