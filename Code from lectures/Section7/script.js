@@ -1,5 +1,24 @@
 'use strict';
 /*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -101,7 +120,7 @@ HINT 4: This challenge is difficult on purpose, so start watching the solution i
 Afterwards, test with your own test data!
 
 GOOD LUCK 😀
-*/
+
 
 /*
 document.body.append(document.createElement('textarea'));
@@ -121,7 +140,7 @@ document.querySelector('button').addEventListener('click', function () {
     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
 });
-*/
+
 
 /*
 ///////////////////////////////////////
@@ -281,7 +300,7 @@ console.log(new String('jonas'));
 console.log(typeof new String('jonas'));
 
 console.log(typeof new String('jonas').slice(1));
-*/
+
 
 ///////////////////////////////////////
 // Coding Challenge #3
@@ -296,7 +315,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
       [FIRST HALF] 17: ⚽️ GOAL
 
 GOOD LUCK 😀
-*/
+
 
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
@@ -335,7 +354,7 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
-*/
+
 
 /*
 ///////////////////////////////////////
@@ -443,7 +462,7 @@ console.log(
 );
 
 console.log(new Set('jonasschmedtmann').size);
-*/
+
 
 ///////////////////////////////////////
 // Coding Challenge #2
@@ -467,7 +486,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
       }
 
 GOOD LUCK 😀
-*/
+
 
 const game = {
   team1: 'Bayern Munich',
@@ -538,7 +557,7 @@ const scorers = {};
 for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
-*/
+
 
 /*
 ///////////////////////////////////////
@@ -612,7 +631,7 @@ for (const [i, el] of menu.entries()) {
 }
 
 // console.log([...menu.entries()]);
-*/
+
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -633,7 +652,7 @@ Suppose we get data from a web service about a certain game (below). In this cha
 TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 
 GOOD LUCK 😀
-*/
+
 
 /*
 // 1.
@@ -917,3 +936,244 @@ console.log(i, j, k);
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
+// // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// // for (const item of menu) console.log(item);
+
+// // for (const [i, el] of menu.entries()) {
+// //   console.log(`${i + 1}: ${el}`);
+// // }
+
+// // if (restaurant.hours && restaurant.hours.mon)
+// //   console.log(restaurant.hours.mon.open);
+
+// // //with optional chaining
+// // console.log(restaurant.hours?.mon?.open);
+
+// // for (const day of days) {
+// //   // console.log(day);
+// //   const open = restaurant.hours[day]?.open ?? `closed`;
+// //   console.log(`On ${day} we open at ${open}`);
+// // }
+
+// // //METHODS
+
+// // console.log(restaurant.order?.(0, 1) ?? `Method does not exist`);
+// // console.log(restaurant.orderRisotto?.(0, 1) ?? `Method does not exist`);
+
+// // //ARRAYS
+// // const users = [{ name: `Tomasz`, email: `hello.tomasz.io` }];
+
+// // console.log(users[0]?.name ?? `User array empty`);
+
+// // Data needed for first part of the section
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+//   //es6 enchanced object literal
+//   hours,
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+// };
+
+// const properties = Object.keys(hours);
+// console.log(properties);
+
+// let openStr = `We are openon ${properties.length} days a week`;
+
+// for (const day of properties) {
+//   openStr += ` ${day}, `;
+// }
+// console.log(openStr);
+
+// //property values
+// const values = Object.values(hours);
+// console.log(values);
+
+// const entries = Object.entries(hours);
+// console.log(entries);
+
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
+
+// Data needed for a later exercise
+// const flights =
+//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// const days = [`mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`];
+
+// const hours = {
+//   thu: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
+
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// for (const [scored, juan] of game.scored.entries()) {
+//   console.log(`Goal ${scored + 1}: ${juan}`);
+// }
+
+// let avg = 0;
+// const odds = Object.values(game.odds);
+// for (const odd of odds) {
+//   avg += odd;
+// }
+// avg /= odds.length;
+// console.log(avg);
+
+// function print() {
+//   for (const iterator of odds) {
+//     console.log(`Odd of victory ${game.team1}: ${iterator}`);
+//     console.log(`Odd of draw: ${iterator}`);
+//     console.log(`Odd of victory ${game.team2}; ${iterator}`);
+//     break;
+//   }
+// }
+// // print();
+
+// function altPrint() {
+//   for (const [team, odd] of Object.entries(game.odds)) {
+//     const teamStr = team === `x` ? `draw` : `victory ${game[team]}`;
+//     console.log(`Odd of ${teamStr} ${odd}`);
+//   }
+// }
+
+// /*for (const [scored, juan] of game.scored.entries()) {
+//   console.log(`Goal ${scored + 1}: ${juan}`); }*/
+
+// // So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
+// const scorers = {};
+// for (const player of game.scored) {
+//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+// }
+
+// const ordersSet = new Set([
+//   `Pasta`,
+//   `Pizza`,
+//   `Pizza`,
+//   `Risotto`,
+//   `Pasta`,
+//   `Pizza`,
+// ]);
+// console.log(ordersSet);
+
+// console.log(new Set(`Tomasz`));
+
+// console.log(ordersSet.size);
+
+// console.log(ordersSet.has(`Pizza`));
+// console.log(ordersSet.has(`Bread`));
+
+// ordersSet.add(`Garlic Bread`);
+// ordersSet.add(`Garlic Bread`);
+// ordersSet.delete(`Risotto`);
+// console.log(ordersSet);
+
+// for (const order of ordersSet) {
+//   console.log(order);
+// }
+
+// //example
+
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+// const staffUnique = new Set(staff);
+// console.log(staffUnique);
+
+// const rest = new Map();
+// rest.set('name', 'Classico Italiano');
+// rest.set(1, 'Firenze, Italy');
+// rest.set(2, 'Lisbon, Portugal');
+
+// // console.log(rest.set(2, 'Lisbon, Portugal'));
+
+// const time = 21;
+// rest.get(time > rest.get(`open`) && time < rest.get('close'));
+
+// console.log(rest.has('categories'));
+// rest.delete(2);
+// console.log(rest);
+
+// console.log(rest.size);
+
+// rest.set([1, 2], '');
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '� Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '� Substitution'],
+  [64, '� Yellow card'],
+  [69, '� Red card'],
+  [70, '� Substitution'],
+  [72, '� Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '� Yellow card'],
+]);
+
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+gameEvents.delete(64);
+
+console.log(
+  `An event happened, on averagem every ${90 / gameEvents.size} minutes`
+);
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? `First` : `Seccond`;
+  console.log(`[${half}HALF] ${min}: ${event}`);
+}
