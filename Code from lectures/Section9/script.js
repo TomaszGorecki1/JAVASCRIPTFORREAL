@@ -71,7 +71,23 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+//foreach for maps and sets
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+const currenciesUnique = new Set([`USD`, `GBP`, `USD`, `EUR`, `EUR`]);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+//foreach
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// movements.forEach(function (movement, index, array) {
+//   console.log(movement);
+// });
 
 /////////////////////////////////////////////////
 ///slice
@@ -102,9 +118,10 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // //JOIN
 // console.log(letters.join(`--`));
 
-const arr = [23, 11, 64];
-console.log(arr.at(0));
-//getting last element
-console.log(arr[arr.length - 1]);
-console.log(arr.slice(-1)[0]);
-console.log(arr.at(-1));
+// const arr = [23, 11, 64];
+// console.log(arr.at(0));
+// //getting last element
+// console.log(arr[arr.length - 1]);
+// console.log(arr.slice(-1)[0]);
+
+// console.log(arr.at(-1));
