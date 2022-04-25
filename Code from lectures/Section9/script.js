@@ -78,6 +78,16 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(` `)
+      .map(name => name[0])
+      .join(``);
+  });
+};
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES/////////////////////////////////////////////////
@@ -188,3 +198,41 @@ displayMovements(account1.movements);
 //   });
 // };
 // checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+const movementsUsd = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+// console.log(movements);
+// console.log(movementsUsd);
+
+const movementsUsdfor = [];
+for (const mov of movements) movementsUsdfor.push(mov * eurToUsd);
+// console.log(movementsUsdfor);
+
+const movementsUsd2 = movements.map(mov => mov * eurToUsd);
+
+const movementDescriptions = movements.map((mov, i) => {
+  return `Movement ${i + 1}: You ${
+    mov > 0 ? `deposited` : `Withdrew`
+  } ${Math.abs(mov)}`;
+});
+// console.log(movementDescriptions);
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(deposits);
+
+const depostiFor = [];
+('');
+for (const mov of movements) if (mov > 0) depostiFor.push(mov);
+console.log(depostiFor);
+
+const withdrawals = movements.filter(function (mov) {
+  return mov < 0;
+});
+console.log(withdrawals);
