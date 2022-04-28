@@ -102,7 +102,6 @@ const calcDisplaySummary = function (acc) {
 
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  acc.balance = balance;
   labelBalance.textContent = `${acc.balance} EUR`;
 };
 
@@ -116,59 +115,37 @@ const createUsernames = function (accs) {
   });
 };
 
-/*
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
- 
+
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
- 
+
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     //Display UI and welcome message
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(' ')[0]
     }`;
     containerApp.style.opacity = 100;
- 
+
     //clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
- 
-    // display movements
-    displayMovements(currentAccount.movements);
-    // display balance
-    calcDisplayBalance(currentAccount);
-    // display summary
-    calcDisplaySummary(currentAccount);
   }
-});
-*/
-btnLogin.addEventListener(`click`, function (e) {
-  e.preventDefault();
-
-  currentAccount = accounts.find(
-    acc => acc.username === inputLoginUsername.value
-  );
-
-  if (currentAccount?.pin === Number(inputLoginPin.value)) {
-    //display Ui and welcome message
-    labelWelcome.textContent = `Welocome back, ${
-      currentAccount.owner.split(` `)[0]
-    }`;
-    containerApp.style.opacity = 100;
-
-    inputLoginUsername.value = inputLoginPin.value = ``;
-    inputLoginPin.blur();
-
-    displayMovements(currentAccount.movements);
-    calcDisplayBalance(currentAccount);
-    calcDisplaySummary(currentAccount);
-  }
+  updateUI(currentAccount);
 });
 
 createUsernames(accounts);
+
+const updateUI = function (acc) {
+  // display movements
+  displayMovements(acc.movements);
+  // display balance
+  calcDisplayBalance(acc);
+  // display summary
+  calcDisplaySummary(acc);
+};
 
 btnTransfer.addEventListener(`click`, function (e) {
   e.preventDefault();
@@ -176,13 +153,17 @@ btnTransfer.addEventListener(`click`, function (e) {
   const receiverAcc = accounts.find(
     acc => acc.username === inputTransferTo.value
   );
-  console.log(amount, receiverAcc);
+
+  inputTransferAmount.value = inputTransferTo.value = '';
 
   if (
     amount > 0 &&
     currentAccount.balance >= amount &&
     receiverAcc?.username !== currentAccount.username
   ) {
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+    updateUI(currentAccount);
   }
 });
 
