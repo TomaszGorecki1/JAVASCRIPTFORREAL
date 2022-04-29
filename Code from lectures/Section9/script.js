@@ -65,16 +65,18 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 let currentAccount;
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = ``;
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? `deposit` : `withdrawal`;
 
     const html = `
     <div class="movements__row">
       <div class="movements__type movements__type--${type}">${i + 1}</div>
-      <div class="movements__value">${mov}</div>
+      <div class="movements__value">${mov} EUR</div>
     </div>
     `;
     containerMovements.insertAdjacentHTML('afterbegin', html);
@@ -90,14 +92,16 @@ const calcDisplaySummary = function (acc) {
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${Math.abs(out)}`;
+  labelSumOut.textContent = `${Math.abs(out)}EUR`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
     .map(deposit => (deposit * acc.interestRate) / 100)
-    .filter((int, i, arr) => int >= 1)
+    .filter((int, i, arr) => {
+      return i >= 1;
+    })
     .reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = `${interest}`;
+  labelSumInterest.textContent = `${interest}EUR`;
 };
 
 const calcDisplayBalance = function (acc) {
@@ -197,6 +201,13 @@ btnClose.addEventListener(`click`, function (e) {
   }
   inputCloseUsername.value = inputClosePin.value = '';
   inputClosePin.blur();
+});
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
