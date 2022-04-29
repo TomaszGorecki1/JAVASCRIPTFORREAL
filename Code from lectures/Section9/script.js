@@ -466,14 +466,36 @@ btnSort.addEventListener('click', function (e) {
 //   .reduce((acc, mov) => acc + mov, 0);
 // console.log(overalBalance2);
 
-const owners = [`Tomasz`, `Zach`, `Adam`, `Martha`];
-// console.log(owners.sort());
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-console.log(movements);
+// const owners = [`Tomasz`, `Zach`, `Adam`, `Martha`];
+// // console.log(owners.sort());
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// console.log(movements);
 
-movements.sort((a, b) => {
-  if (a > b) return 1;
-  if (a < b) return -1;
-});
-movements.sort((a, b) => a - b);
-console.log(movements);
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+// movements.sort((a, b) => a - b);
+// console.log(movements);
+
+// const x = new Array(7);
+// console.log(x);
+
+// // x.fill(1);
+// x.fill(1, 3, 5);
+// console.log(x);
+
+// //array from
+// const y = Array.from({ length: 7 }, () => 1);
+// console.log(y);
+
+// const z = Array.from({ length: 7 }, (cur, i) => i + 1);
+// console.log(z);
+
+// labelBalance.addEventListener(`click`, function () {
+//   const movementsUi = Array.from(
+//     document.querySelector('.movements__value'),
+//     el => Number(el.textContent.replace('EUR', ''))
+//   );
+//   console.log(movementsUi.map());
+// });
