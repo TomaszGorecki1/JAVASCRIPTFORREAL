@@ -499,3 +499,8 @@ btnSort.addEventListener('click', function (e) {
 //   );
 //   console.log(movementsUi.map());
 // });
+
+//////////////////////////////////////////////////////////////////////////////
+// array methods practice
+
+const bankDepositSum = accounts.map(acc => acc.movements);
