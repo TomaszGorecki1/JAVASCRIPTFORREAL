@@ -503,4 +503,97 @@ btnSort.addEventListener('click', function (e) {
 //////////////////////////////////////////////////////////////////////////////
 // array methods practice
 
-const bankDepositSum = accounts.map(acc => acc.movements);
+// const bankDepositSum = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov > 0)
+//   .reduce((sum, cur) => sum + cur, 0);
+
+// console.log(bankDepositSum);
+
+// // const numDeposits1000 = accounts
+// //   .flatMap(acc => acc.movements)
+// //   .filter(mov => mov >= 1000).length;
+// // console.log(numDeposits1000);
+
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+// console.log(numDeposits1000);
+
+// //3
+
+// const { deposits, withdrwals } = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce(
+//     (sums, cur) => {
+//       // cur > 0 ? (sums.deposits += cur) : (sums.withdrwals += cur);
+//       sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+//       return sums;
+//     },
+//     { deposits: 0, withdrwals: 0 }
+//   );
+// console.log(deposits, withdrwals);
+
+// //4
+
+// const convertTitleCase = function (title) {
+//   const expections = ['a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+//   const titleCase = title
+//     .toLowerCase()
+//     .split(' ')
+//     .map(word =>
+//       expections.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+//     );
+//   return titleCase;
+// };
+// console.log(convertTitleCase('this is a nice title'));
+// console.log(convertTitleCase('this is a LONG title but n ot too long'));
+// // console.log(convertTitleCase('and here is another title with an EXMAPLE'));
+
+// //CODING CHALLENGE #4
+// const dogs = [
+//   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+//   { weight: 8, curFood: 200, owners: ['Matilda'] },
+//   { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+//   { weight: 32, curFood: 340, owners: ['Michael'] },
+// ];
+// //1
+// dogs.forEach(function (dog) {
+//   return (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28));
+// });
+// //2
+// dogs.forEach(function (juan) {
+//   if (juan.owners.includes('Sarah')) {
+//     juan.recFood < juan.curFood
+//       ? console.log(`${juan.owners} dog eat too much`)
+//       : console.log(`${juan.owners} dog eat too litlle`);
+//   }
+// });
+// //3
+// const ownersEatTooMuch = dogs
+//   .filter(dog => dog.curFood > dog.recFood)
+//   .flatMap(dog => dog.owners);
+// console.log(ownersEatTooMuch);
+// const ownersEatTooLittle = dogs
+//   .filter(dog => dog.curFood < dog.recFood)
+//   .flatMap(dog => dog.owners);
+// console.log(ownersEatTooLittle);
+// //4
+// console.log(`${ownersEatTooMuch.join(` and `)} dogs eat too much!`);
+// console.log(`${ownersEatTooLittle.join(` and `)} dogs eat too little!`);
+// //5
+// dogs.forEach(element => {
+//   if (element.curFood === element.recFood) console.log(`true`);
+//   else console.log(`false`);
+// });
+// //6
+// const checkEatingOkay = dog => dog =>
+//   dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+
+// console.log(dogs.some(checkEatingOkay));
+// //7
+// console.log(dogs.filter(checkEatingOkay));
+// //8
+// const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+// console.log(dogsSorted);
