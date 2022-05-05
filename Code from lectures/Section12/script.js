@@ -145,50 +145,127 @@
 // const PersonCl = class {}
 
 // Class declaration
-// class PersonCl {
-//   constructor(fullName, birthYear) {
-//     this.fullName = fullName;
-//     this.birthYear = birthYear;
+//
+
+// class Account {
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.pin = pin;
+//     this.movements = [];
+//     this.locale = navigator.language;
+
+//     console.log(`Thanks for openinag account, ${owner}`);
 //   }
 
-//   // Instance methods
-//   // Methods will be added to .prototype property
-//   calcAge() {
-//     console.log(2037 - this.birthYear);
+//   deposit(val) {
+//     this.movements.push(val);
+//     return this;
+//   }
+//   withdrawal(val) {
+//     this.deposit(-val);
+//     return this;
 //   }
 
-//   greet() {
-//     console.log(`Hey ${this.fullName}`);
+//   approveLoan(val) {
+//     return true;
 //   }
 
-//   get age() {
-//     return 2037 - this.birthYear;
-//   }
-
-//   // Set a property that already exists
-//   set fullName(name) {
-//     if (name.includes(' ')) this._fullName = name;
-//     else alert(`${name} is not a full name!`);
-//   }
-
-//   get fullName() {
-//     return this._fullName;
-//   }
-
-//   // Static method
-//   static hey() {
-//     console.log('Hey there 👋');
-//     console.log(this);
+//   requestLoan(val) {
+//     if (this.approveLoan(val)) {
+//       this.deposit(`Loan approved`);
+//     }
 //   }
 // }
 
-// class StudentCl extends PersonCl {
-//   constructor(fullName, birthYear, course) {
-//     super(fullName, birthYear);
-//     this.course = course;
-//   }
-// }
-// const martha = new StudentCl(`Martha Jones`, 2012, 'Computer science');
-// console.log(martha);
+// const acc1 = new Account(`Jonas`, `Eur`, 1111);
+// console.log(acc1);
 
-// martha.calcAge();
+// acc1.deposit(250);
+// acc1.withdrawal(140);
+
+// // acc1.movements.push(250);
+// // acc1.movements.push(-140);
+
+// //public fields
+// //private fields
+// //public methods
+// //private methods
+
+// acc1.deposit(300).deposit(500).withdrawal(35);
+
+/* 
+1. Re-create challenge #3, but this time using ES6 classes: create an 'EVCl' child class of the 'CarCl' class
+2. Make the 'charge' property private;
+3. Implement the ability to chain the 'accelerate' and 'chargeBattery' methods of this class, and also update the 'brake' method in the 'CarCl' class. They experiment with chining!
+
+DATA CAR 1: 'Rivian' going at 120 km/h, with a charge of 23%
+
+GOOD LUCK 😀
+*/
+
+/*
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+  }
+
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+    return this;
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+class EVCl extends CarCl {
+  #charge;
+
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this.#charge = charge;
+  }
+
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo;
+    return this;
+  }
+
+  accelerate() {
+    this.speed += 20;
+    this.#charge--;
+    console.log(
+      `${this.make} is going at ${this.speed} km/h, with a charge of ${
+        this.#charge
+      }`
+    );
+    return this;
+  }
+}
+
+const rivian = new EVCl('Rivian', 120, 23);
+console.log(rivian);
+// console.log(rivian.#charge);
+rivian
+  .accelerate()
+  .accelerate()
+  .accelerate()
+  .brake()
+  .chargeBattery(50)
+  .accelerate();
+
+console.log(rivian.speedUS);
+*/
