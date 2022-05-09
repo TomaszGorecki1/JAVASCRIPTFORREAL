@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-    "live-server": "^1.2.1"
-  },
+  "dependencies": {},
   "name": "javascriptforreal",
   "version": "1.0.0",
   "devDependencies": {},
