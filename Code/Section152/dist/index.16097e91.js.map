@@ -1,0 +1,1 @@
+{"mappings":"AAAA,IAAI,MAAM,CAAC,GAAG,EACZ,MAAM,CAAC,GAAG,CAAC,MAAM,EAAE,CAAC","sources":["Code from lectures/Section15&try2/script.js"],"sourcesContent":["if (module.hot) {\r\n  module.hot.accept();\r\n}\r\n"],"names":[],"version":3,"file":"index.16097e91.js.map","sourceRoot":"/__parcel_source_root/"}

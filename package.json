@@ -1,10 +1,13 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "leaflet": "^1.8.0",
+    "lodash-es": "^4.17.21"
+  },
   "name": "javascriptforreal",
   "version": "1.0.0",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel D:\\GIT\\JAVASCRIPTFORREAL\\Code\\Section152\\index.html",
+    "build": "parcel build D:\\GIT\\JAVASCRIPTFORREAL\\Code\\Section152\\index.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,8 @@
     "url": "https://github.com/TomaszGorecki1/JAVASCRIPTFORREAL/issues"
   },
   "homepage": "https://github.com/TomaszGorecki1/JAVASCRIPTFORREAL#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  }
 }
